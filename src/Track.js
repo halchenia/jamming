@@ -1,0 +1,10 @@
+import React from 'react';
+import styles from './Track.module.css';
+
+function Track() {
+  return (
+    'hui'
+  );
+}
+
+export default Track;

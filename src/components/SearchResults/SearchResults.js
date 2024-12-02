@@ -2,12 +2,15 @@ import React from 'react';
 import Tracklist from './../Tracklist/Tracklist';
 import styles from './SearchResults.module.css';
 
-const SearchResults = () => {
+const SearchResults = ({tracks}) => {
     return (
+    <>
         <div className={styles.searchResults}>
             <h2>Results</h2>
-            <Tracklist />
+            <Tracklist tracks={tracks}/>
         </div>
+
+        </>
     );
 };
 

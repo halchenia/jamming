@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 import './App.css';
 
 function App() {
+
+  const [playlistName, setPlaylitName] = useState("New Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+
   const tracks = [
     {id:1, name: "Song 1", artist: "Artist 1", album: "Album 1"},
     {id:2, name: "Song 2", artist: "Artist 2", album: "Album 2"},
@@ -17,7 +21,7 @@ function App() {
       <SearchBar />
       <div className="App-main">
         <SearchResults tracks={tracks} />
-        <Playlist tracks={tracks}/>
+        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
       </div>
     </div>
   );

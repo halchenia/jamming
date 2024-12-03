@@ -2,19 +2,23 @@ import React from 'react';
 import Track from '../Track/Track';
 import styles from './Tracklist.module.css';
 
-const Tracklist = (props) => {
+const Tracklist = ({ tracks }) => {
     return (
-        <div className={styles.trackliast}>
+        <div className={styles.tracklist}>
             <div>This is Tracklist</div>
-            <ul>
-        {
-            props.tracks.map((track) => (
-                <Track track={track} key={track.id} />               
-            ))
-        }       
-        </ul>
+            {
+                tracks.length > 0 ? (
+                    <ul>
+                        {tracks.map((track) => (
+                            <Track track={track} key={track.id} />
+                        ))}
+                    </ul>
+                ) : (
+                    <div>No tracks available</div> // Здесь исправлена ошибка
+                )
+            }
         </div>
     );
-}
+};
 
 export default Tracklist;

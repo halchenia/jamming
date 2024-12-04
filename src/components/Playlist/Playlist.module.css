@@ -1,3 +1,15 @@
+.playlistNameInput {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  outline: none;
+}
+.playlistNameInput:focus {
+  border-bottom: 2px solid #00bcd4;
+}
 .saveButton {
     padding: 10px 20px;
     background-color: #1db954;

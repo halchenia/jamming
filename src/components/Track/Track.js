@@ -17,7 +17,7 @@ const Track = ({track, onAdd, onRemove, isRemoval}) => {
                     className={styles.track}
                     onClick={isRemoval ? handleRemove : handleAdd}>
                         {isRemoval ? 'Remove' : '+'}
-                </button> s
+                </button> 
             </div>
             <div>This is track</div>
         </>

@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
 
-  const [playlistName, setPlaylitName] = useState("New Playlist");
+  const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const searchResults = [
@@ -27,13 +27,25 @@ function App() {
     setPlaylistTracks((prevTracks) => prevTracks.filter((savedTrack) => savedTrack.id !== track.id));
   };
 
+  const handlePlaylistNameChange = (event) => {
+    setPlaylistName(event.target.value);
+  };
+
   return (
     <div>
       <h1>Jamming</h1>
       <SearchBar />
       <div className="App-main">
-        <SearchResults tracks={searchResults} onAdd={addTrack} />
-        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} />
+        <SearchResults 
+          tracks={searchResults} 
+          onAdd={addTrack} 
+        />
+        <Playlist 
+          playlistName={playlistName} 
+          playlistTracks={playlistTracks} 
+          onRemove={removeTrack} 
+          onNameChange={handlePlaylistNameChange}
+        />
       </div>
     </div>
   );
